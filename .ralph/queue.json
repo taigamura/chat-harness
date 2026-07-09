@@ -1,0 +1,232 @@
+{
+  "version": "1.0",
+  "created_at": "2026-07-09T16:42:56+00:00",
+  "updated_at": "2026-07-09T16:53:22+00:00",
+  "repository": "",
+  "queue": [
+    {
+      "source": "github",
+      "issue_number": 2,
+      "title": "Scaffold: pyproject, config, uv env, mcp.json",
+      "priority": "P0",
+      "labels": [
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_m_wA",
+          "name": "ready-for-agent",
+          "description": "Fully specified, ready for an AFK agent",
+          "color": "0075ca"
+        },
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_oakA",
+          "name": "P0",
+          "description": "Critical — must ship first",
+          "color": "b60205"
+        }
+      ],
+      "milestone": null,
+      "dependencies": [],
+      "id": "github-2",
+      "status": "completed",
+      "added_at": "2026-07-09T16:43:32+00:00",
+      "started_at": "2026-07-09T16:44:23+00:00",
+      "completed_at": "2026-07-09T16:47:41+00:00",
+      "error_message": ""
+    },
+    {
+      "source": "github",
+      "issue_number": 3,
+      "title": "MCP client: both transports, boot, tool discovery",
+      "priority": "P0",
+      "labels": [
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_m_wA",
+          "name": "ready-for-agent",
+          "description": "Fully specified, ready for an AFK agent",
+          "color": "0075ca"
+        },
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_oakA",
+          "name": "P0",
+          "description": "Critical — must ship first",
+          "color": "b60205"
+        }
+      ],
+      "milestone": null,
+      "dependencies": [],
+      "id": "github-3",
+      "status": "completed",
+      "added_at": "2026-07-09T16:43:33+00:00",
+      "started_at": "2026-07-09T16:47:41+00:00",
+      "completed_at": "2026-07-09T16:53:21+00:00",
+      "error_message": ""
+    },
+    {
+      "source": "github",
+      "issue_number": 4,
+      "title": "Ollama client + Qwen tool-call parser",
+      "priority": "P0",
+      "labels": [
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_m_wA",
+          "name": "ready-for-agent",
+          "description": "Fully specified, ready for an AFK agent",
+          "color": "0075ca"
+        },
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_oakA",
+          "name": "P0",
+          "description": "Critical — must ship first",
+          "color": "b60205"
+        }
+      ],
+      "milestone": null,
+      "dependencies": [],
+      "id": "github-4",
+      "status": "processing",
+      "added_at": "2026-07-09T16:43:34+00:00",
+      "started_at": "2026-07-09T16:53:22+00:00",
+      "completed_at": null,
+      "error_message": ""
+    },
+    {
+      "source": "github",
+      "issue_number": 5,
+      "title": "Agent loop: tool-call dispatch, context trimming, session logging",
+      "priority": "P0",
+      "labels": [
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_m_wA",
+          "name": "ready-for-agent",
+          "description": "Fully specified, ready for an AFK agent",
+          "color": "0075ca"
+        },
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_oakA",
+          "name": "P0",
+          "description": "Critical — must ship first",
+          "color": "b60205"
+        }
+      ],
+      "milestone": null,
+      "dependencies": [],
+      "id": "github-5",
+      "status": "pending",
+      "added_at": "2026-07-09T16:43:35+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "error_message": ""
+    },
+    {
+      "source": "github",
+      "issue_number": 6,
+      "title": "REPL + one-shot entry, Rich streaming output",
+      "priority": "P0",
+      "labels": [
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_m_wA",
+          "name": "ready-for-agent",
+          "description": "Fully specified, ready for an AFK agent",
+          "color": "0075ca"
+        },
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_oakA",
+          "name": "P0",
+          "description": "Critical — must ship first",
+          "color": "b60205"
+        }
+      ],
+      "milestone": null,
+      "dependencies": [],
+      "id": "github-6",
+      "status": "pending",
+      "added_at": "2026-07-09T16:43:37+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "error_message": ""
+    },
+    {
+      "source": "github",
+      "issue_number": 7,
+      "title": "Skill discovery + slash command pre-processing",
+      "priority": "P0",
+      "labels": [
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_m_wA",
+          "name": "ready-for-agent",
+          "description": "Fully specified, ready for an AFK agent",
+          "color": "0075ca"
+        },
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_oakA",
+          "name": "P0",
+          "description": "Critical — must ship first",
+          "color": "b60205"
+        }
+      ],
+      "milestone": null,
+      "dependencies": [],
+      "id": "github-7",
+      "status": "pending",
+      "added_at": "2026-07-09T16:43:40+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "error_message": ""
+    },
+    {
+      "source": "github",
+      "issue_number": 8,
+      "title": "Task tracking: TODO.md read/write tool",
+      "priority": "P1",
+      "labels": [
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_m_wA",
+          "name": "ready-for-agent",
+          "description": "Fully specified, ready for an AFK agent",
+          "color": "0075ca"
+        },
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_obNA",
+          "name": "P1",
+          "description": "Important",
+          "color": "e99695"
+        }
+      ],
+      "milestone": null,
+      "dependencies": [],
+      "id": "github-8",
+      "status": "pending",
+      "added_at": "2026-07-09T16:43:42+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "error_message": ""
+    },
+    {
+      "source": "github",
+      "issue_number": 9,
+      "title": "Sub-agent support for parallel skill execution",
+      "priority": "P1",
+      "labels": [
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_m_wA",
+          "name": "ready-for-agent",
+          "description": "Fully specified, ready for an AFK agent",
+          "color": "0075ca"
+        },
+        {
+          "id": "LA_kwDOTTfG_88AAAACq_obNA",
+          "name": "P1",
+          "description": "Important",
+          "color": "e99695"
+        }
+      ],
+      "milestone": null,
+      "dependencies": [],
+      "id": "github-9",
+      "status": "pending",
+      "added_at": "2026-07-09T16:43:44+00:00",
+      "started_at": null,
+      "completed_at": null,
+      "error_message": ""
+    }
+  ]
+}
