@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "obsidian-vault": {
+      "type": "sse",
+      "url": "https://localhost:27124",
+      "headers": {
+        "Authorization": "Bearer YOUR_OBSIDIAN_LOCAL_REST_TOKEN"
+      }
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "ddg": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-ddg"]
+    },
+    "fetch": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-fetch"]
+    }
+  }
+}
