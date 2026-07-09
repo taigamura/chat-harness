@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "created_at": "2026-07-09T16:42:56+00:00",
-  "updated_at": "2026-07-09T16:53:35+00:00",
+  "updated_at": "2026-07-09T16:53:42+00:00",
   "repository": "",
   "queue": [
     {
@@ -138,10 +138,10 @@
       "milestone": null,
       "dependencies": [],
       "id": "github-6",
-      "status": "processing",
+      "status": "completed",
       "added_at": "2026-07-09T16:43:37+00:00",
       "started_at": "2026-07-09T16:53:35+00:00",
-      "completed_at": null,
+      "completed_at": "2026-07-09T16:53:41+00:00",
       "error_message": ""
     },
     {
@@ -166,9 +166,9 @@
       "milestone": null,
       "dependencies": [],
       "id": "github-7",
-      "status": "pending",
+      "status": "processing",
       "added_at": "2026-07-09T16:43:40+00:00",
-      "started_at": null,
+      "started_at": "2026-07-09T16:53:42+00:00",
       "completed_at": null,
       "error_message": ""
     },
