@@ -13,7 +13,7 @@ _DEFAULT_CONFIG_PATH = Path(__file__).parent.parent / "config.yaml"
 
 
 def _resolve_path(p: str) -> Path:
-    return Path(os.path.expanduser(p)).expandvars()
+    return Path(os.path.expandvars(os.path.expanduser(p)))
 
 
 class Config:
