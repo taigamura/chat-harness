@@ -1,4 +1,4 @@
-vault_path: C:\Users\Dorakou\Documents\Obsidian Vault
+vault_path: ~/Documents/ObsidianVault
 model: qwen2.5:14b-instruct-q4_K_M
 ollama_url: http://localhost:11434
 log_dir: ~/.chat-harness/logs

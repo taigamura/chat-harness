@@ -59,7 +59,12 @@ This script is idempotent — safe to re-run. It installs:
 
 ## 4 — Configure config.yaml
 
-Edit [config.yaml](config.yaml) to match your machine:
+`config.yaml` is gitignored since it holds machine-specific paths. Copy the template
+and edit it to match your machine:
+
+```bash
+cp config.yaml.example config.yaml
+```
 
 ```yaml
 vault_path: ~/Documents/ObsidianVault   # path to your Obsidian vault inside WSL
@@ -72,8 +77,15 @@ log_dir: ~/.chat-harness/logs
 
 ## 5 — Configure the Obsidian MCP token
 
+`mcp.json` is gitignored too, since it holds your Obsidian API token. Copy the
+template first:
+
+```bash
+cp mcp.json.example mcp.json
+```
+
 1. In Obsidian, open **Settings → Local REST API** and copy the API key.
-2. Edit [mcp.json](mcp.json) and replace `YOUR_OBSIDIAN_LOCAL_REST_TOKEN`:
+2. Edit `mcp.json` and replace `YOUR_OBSIDIAN_LOCAL_REST_TOKEN`:
 
 ```json
 "obsidian-vault": {

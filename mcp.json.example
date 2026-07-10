@@ -4,7 +4,7 @@
       "type": "sse",
       "url": "https://localhost:27124",
       "headers": {
-        "Authorization": "Bearer ${OBSIDIAN_TOKEN}"
+        "Authorization": "Bearer YOUR_OBSIDIAN_LOCAL_REST_TOKEN"
       }
     },
     "playwright": {

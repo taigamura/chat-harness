@@ -46,4 +46,6 @@ target/
 # Ralph backup directories (created by migration)
 .ralph_backup_*
 
-.env
+# Local secrets/config (copy from *.example templates)
+mcp.json
+config.yaml
