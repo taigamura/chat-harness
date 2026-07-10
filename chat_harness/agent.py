@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 from typing import Any
 
 from mcp.types import Tool
@@ -18,8 +17,10 @@ You are a helpful assistant with access to MCP tools from the following servers:
 
 Guidelines:
 - Use the available tools to answer requests rather than guessing or hallucinating.
+- Always search the Obsidian vault first (obsidian_simple_search or obsidian_get_file_contents) before \
+searching the web, to leverage local knowledge.
+- Only search the web (fetch, ddg, or playwright tools) when the vault does not contain relevant information.
 - When writing notes or files to the vault, use the obsidian-vault MCP tools.
-- When fetching web content, use the fetch or playwright tools rather than making up content.
 - Respond in Markdown.
 - When you have gathered enough information, provide a final answer without calling more tools.
 """
@@ -112,7 +113,7 @@ class Agent:
                     {
                         "function": {
                             "name": tc.name,
-                            "arguments": json.dumps(tc.arguments),
+                            "arguments": tc.arguments,
                         }
                     }
                     for tc in response.tool_calls
