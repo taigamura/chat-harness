@@ -3,11 +3,11 @@
 from __future__ import annotations
 
 import json
-import ssl
 from pathlib import Path
 from urllib.parse import urlparse
 from typing import Any
 
+import httpx
 from mcp import ClientSession
 from mcp.client.sse import sse_client
 from mcp.client.stdio import StdioServerParameters, stdio_client
@@ -90,13 +90,17 @@ class MCPClient:
         ssl_context: ssl.SSLContext | bool
         hostname = urlparse(url).hostname or ""
         if hostname in _LOCALHOST_HOSTS:
-            ssl_context = ssl.create_default_context()
-            ssl_context.check_hostname = False
-            ssl_context.verify_mode = ssl.CERT_NONE
-        else:
-            ssl_context = True  # default: SSL verification enabled
+            # Self-signed cert on localhost — bypass SSL verification via a custom httpx factory
+            def _no_verify_factory(
+                headers: dict[str, str] | None = None,
+                timeout: httpx.Timeout | None = None,
+                auth: httpx.Auth | None = None,
+            ) -> httpx.AsyncClient:
+                return httpx.AsyncClient(headers=headers or {}, timeout=timeout, auth=auth, verify=False)
 
-        cm = sse_client(url, headers=headers, ssl=ssl_context)
+            cm = sse_client(url, headers=headers, httpx_client_factory=_no_verify_factory)
+        else:
+            cm = sse_client(url, headers=headers)
         read, write = await cm.__aenter__()
         self._cms.append(cm)
 

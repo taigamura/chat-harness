@@ -11,7 +11,6 @@ from __future__ import annotations
 import asyncio
 import json
 import os
-import ssl
 from pathlib import Path
 from unittest.mock import AsyncMock, MagicMock, patch
 
@@ -67,7 +66,7 @@ class TestMCPClientUnit:
         asyncio.run(_run())
 
     def test_ssl_disabled_for_localhost(self, tmp_path):
-        """SSE connections to localhost must use an unverified SSL context."""
+        """SSE connections to localhost must use a no-verify httpx_client_factory."""
         cfg = {
             "mcpServers": {
                 "vault": {
@@ -80,7 +79,7 @@ class TestMCPClientUnit:
         mcp_json = tmp_path / "mcp.json"
         mcp_json.write_text(json.dumps(cfg))
 
-        captured_ssl: dict = {}
+        captured: dict = {}
 
         class _FakeSSECM:
             async def __aenter__(self):
@@ -89,8 +88,8 @@ class TestMCPClientUnit:
             async def __aexit__(self, *args):
                 pass
 
-        def fake_sse_client(url, headers=None, ssl=None):  # noqa: ARG001
-            captured_ssl["ctx"] = ssl
+        def fake_sse_client(url, headers=None, httpx_client_factory=None, **kwargs):  # noqa: ARG001
+            captured["factory"] = httpx_client_factory
             return _FakeSSECM()
 
         fake_session = MagicMock()
@@ -112,10 +111,14 @@ class TestMCPClientUnit:
 
         asyncio.run(_run())
 
-        ctx = captured_ssl.get("ctx")
-        assert ctx is not None, "ssl argument should have been passed to sse_client"
-        assert isinstance(ctx, ssl.SSLContext), "Expected an ssl.SSLContext for localhost"
-        assert ctx.verify_mode == ssl.CERT_NONE, "SSL verification must be disabled for localhost"
+        factory = captured.get("factory")
+        assert factory is not None, "httpx_client_factory should have been passed to sse_client"
+        # The factory must produce an httpx.AsyncClient with SSL verification disabled
+        import httpx, ssl
+        client = factory()
+        assert isinstance(client, httpx.AsyncClient)
+        ssl_ctx = client._transport._pool._ssl_context
+        assert ssl_ctx.verify_mode == ssl.CERT_NONE
 
 
 # ---------------------------------------------------------------------------
