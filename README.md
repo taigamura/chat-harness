@@ -50,7 +50,8 @@ This script is idempotent — safe to re-run. It installs:
 
 - Node.js via nvm (skipped if already present)
 - `uv` / `uvx` (skipped if already present)
-- npm MCP server packages: `@playwright/mcp`, `@anthropic-ai/mcp-server-ddg`, `@anthropic-ai/mcp-server-fetch`
+- npm MCP server packages: `@playwright/mcp`
+- Python MCP server packages via uvx: `duckduckgo-mcp-server`, `mcp-server-fetch`
 - Playwright Chromium browser
 - Python dependencies via `uv sync`
 

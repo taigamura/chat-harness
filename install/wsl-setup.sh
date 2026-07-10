@@ -28,7 +28,7 @@ fi
 
 # ── npm MCP servers ─────────────────────────────────────────────────────────
 echo "[setup] Installing npm MCP server packages..."
-npm install -g --prefer-offline @playwright/mcp @anthropic-ai/mcp-server-ddg @anthropic-ai/mcp-server-fetch 2>&1 | tail -5
+npm install -g --prefer-offline @playwright/mcp 2>&1 | tail -5
 
 # ── Playwright browsers ──────────────────────────────────────────────────────
 echo "[setup] Installing Playwright Chromium..."
