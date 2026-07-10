@@ -1,6 +1,6 @@
 {
   "name": "chat-harness",
-  "commandline": "wsl.exe -e bash -c \"cd ~/chat-harness && uv run python -m chat_harness\"",
+  "commandline": "wsl.exe -e bash -c \"cd ~/dev/chat-harness && uv run python -m chat_harness\"",
   "icon": "%USERPROFILE%\\AppData\\Local\\Packages\\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\\LocalState\\rootfs\\usr\\share\\pixmaps\\ubuntu.png",
   "startingDirectory": "~",
   "colorScheme": "One Half Dark",
